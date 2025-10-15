@@ -52,3 +52,14 @@ INSERT INTO OrderDetails VALUES ('OD1', 1, 201, 101);
 INSERT INTO OrderDetails VALUES ('OD2', 1, 201, 102);  
 INSERT INTO OrderDetails VALUES ('OD3', 2, 202, 104);  
 INSERT INTO OrderDetails VALUES ('OD4', 1, 203, 103);  
+
+--QUERY 1: Retrieve products with low stock (eg: less than 20 units)
+SELECT *
+FROM Products
+WHERE Stock_Quantity < 20;
+
+-- QUERY 2: Calculate the total amount spent by each customer
+SELECT C.Customer_ID, SUM(O.Total_Amount) as Amount_Spent
+FROM Customers C
+JOIN Orders O ON C.Customer_ID = O.Customer_ID
+GROUP BY C.Customer_ID;
