@@ -36,7 +36,7 @@ SELECT * FROM EMP;
 SELECT e.emp_name , d.dept_name 
 FROM Emp e JOIN DEPT d ON e.deptno = d.deptno;
 
----2. List all employees with their job titles and the location of teir department
+---2. List all employees with their job titles and the location of their department
 SELECT e.emp_name, e.Job, d.Loc
 FROM Emp e JOIN DEPT d ON e.deptno = d.deptno
 
